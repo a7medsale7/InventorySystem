@@ -64,5 +64,10 @@ namespace InventoryManagementSystem.Forms
             if (_report != null) _report.Dispose();
             base.OnFormClosed(e);
         }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using InventoryManagementSystem.Data;
 using InventoryManagementSystem.Forms;
 
 namespace InventoryManagementSystem
@@ -14,6 +15,20 @@ namespace InventoryManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // تأكد من وجود مستخدمين في قاعدة البيانات (admin / viewer)
+            try
+            {
+                new UserRepository().SeedDefaultUsers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Could not connect to the database.\n\n" + ex.Message +
+                    "\n\nPlease check App.config connection string.",
+                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // حلقة: بعد Logout تفتح شاشة Login تاني
             while (true)

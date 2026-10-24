@@ -33,112 +33,157 @@ namespace InventoryManagementSystem.Forms
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).BeginInit();
             this.SuspendLayout();
-
-            int labelX  = 20;
-            int controlX = 170;
-            int w        = 230;
-            int row      = 18;
-            int step     = 36;
-
-            // ─── Product ID ──────────────────────────────────────────
-            this.lblId.Text     = "Product ID";
+            // 
+            // lblId
+            // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(labelX, row + 3);
-
-            this.lblIdValue.Text     = "(auto)";
+            this.lblId.Location = new System.Drawing.Point(20, 21);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(62, 15);
+            this.lblId.TabIndex = 0;
+            this.lblId.Text = "Product ID";
+            // 
+            // lblIdValue
+            // 
             this.lblIdValue.AutoSize = true;
-            this.lblIdValue.Font     = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.lblIdValue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.lblIdValue.ForeColor = System.Drawing.Color.Gray;
-            this.lblIdValue.Location = new System.Drawing.Point(controlX, row + 3);
-            row += step;
-
-            // ─── Name ────────────────────────────────────────────────
-            this.lblName.Text     = "Name *";
+            this.lblIdValue.Location = new System.Drawing.Point(170, 21);
+            this.lblIdValue.Name = "lblIdValue";
+            this.lblIdValue.Size = new System.Drawing.Size(35, 15);
+            this.lblIdValue.TabIndex = 1;
+            this.lblIdValue.Text = "(auto)";
+            // 
+            // lblName
+            // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(labelX, row + 3);
-
+            this.lblName.Location = new System.Drawing.Point(20, 57);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(47, 15);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "Name *";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(170, 54);
             this.txtName.MaxLength = 100;
-            this.txtName.Width     = w;
-            this.txtName.Location  = new System.Drawing.Point(controlX, row);
-            row += step;
-
-            // ─── Description ─────────────────────────────────────────
-            this.lblDesc.Text     = "Description";
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(230, 23);
+            this.txtName.TabIndex = 3;
+            // 
+            // lblDesc
+            // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(labelX, row + 3);
-
-            this.txtDescription.Multiline  = true;
-            this.txtDescription.Height     = 60;
-            this.txtDescription.MaxLength  = 500;
-            this.txtDescription.Width      = w;
-            this.txtDescription.Location   = new System.Drawing.Point(controlX, row);
+            this.lblDesc.Location = new System.Drawing.Point(20, 93);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(67, 15);
+            this.lblDesc.TabIndex = 4;
+            this.lblDesc.Text = "Description";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(170, 90);
+            this.txtDescription.MaxLength = 500;
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
             this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            row += step + 28;
-
-            // ─── Quantity ────────────────────────────────────────────
-            this.lblQty.Text     = "Quantity in Stock";
+            this.txtDescription.Size = new System.Drawing.Size(230, 60);
+            this.txtDescription.TabIndex = 5;
+            // 
+            // lblQty
+            // 
             this.lblQty.AutoSize = true;
-            this.lblQty.Location = new System.Drawing.Point(labelX, row + 3);
-
-            this.nudQuantity.Minimum  = 0;
-            this.nudQuantity.Maximum  = 10000000;
-            this.nudQuantity.Width    = 120;
-            this.nudQuantity.Location = new System.Drawing.Point(controlX, row);
-            row += step;
-
-            // ─── Price ───────────────────────────────────────────────
-            this.lblPrice.Text     = "Price";
+            this.lblQty.Location = new System.Drawing.Point(20, 157);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(102, 15);
+            this.lblQty.TabIndex = 6;
+            this.lblQty.Text = "Quantity in Stock";
+            // 
+            // nudQuantity
+            // 
+            this.nudQuantity.Location = new System.Drawing.Point(170, 154);
+            this.nudQuantity.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(120, 23);
+            this.nudQuantity.TabIndex = 7;
+            // 
+            // lblPrice
+            // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(labelX, row + 3);
-
+            this.lblPrice.Location = new System.Drawing.Point(20, 193);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(33, 15);
+            this.lblPrice.TabIndex = 8;
+            this.lblPrice.Text = "Price";
+            // 
+            // nudPrice
+            // 
             this.nudPrice.DecimalPlaces = 2;
-            this.nudPrice.Minimum       = 0;
-            this.nudPrice.Maximum       = 100000000;
-            this.nudPrice.Width         = 120;
-            this.nudPrice.Location      = new System.Drawing.Point(controlX, row);
-            row += step;
-
-            // ─── Supplier ────────────────────────────────────────────
-            this.lblSupplier.Text     = "Supplier Name *";
+            this.nudPrice.Location = new System.Drawing.Point(170, 190);
+            this.nudPrice.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
+            this.nudPrice.Name = "nudPrice";
+            this.nudPrice.Size = new System.Drawing.Size(120, 23);
+            this.nudPrice.TabIndex = 9;
+            // 
+            // lblSupplier
+            // 
             this.lblSupplier.AutoSize = true;
-            this.lblSupplier.Location = new System.Drawing.Point(labelX, row + 3);
-
+            this.lblSupplier.Location = new System.Drawing.Point(20, 229);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(97, 15);
+            this.lblSupplier.TabIndex = 10;
+            this.lblSupplier.Text = "Supplier Name *";
+            // 
+            // txtSupplier
+            // 
+            this.txtSupplier.Location = new System.Drawing.Point(170, 226);
             this.txtSupplier.MaxLength = 100;
-            this.txtSupplier.Width     = w;
-            this.txtSupplier.Location  = new System.Drawing.Point(controlX, row);
-            row += step;
-
-            // ─── Category ────────────────────────────────────────────
-            this.lblCategory.Text     = "Category";
+            this.txtSupplier.Name = "txtSupplier";
+            this.txtSupplier.Size = new System.Drawing.Size(230, 23);
+            this.txtSupplier.TabIndex = 11;
+            // 
+            // lblCategory
+            // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(labelX, row + 3);
-
+            this.lblCategory.Location = new System.Drawing.Point(20, 265);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(55, 15);
+            this.lblCategory.TabIndex = 12;
+            this.lblCategory.Text = "Category";
+            // 
+            // cboCategory
+            // 
             this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCategory.Width    = w;
-            this.cboCategory.Location = new System.Drawing.Point(controlX, row);
-            row += step + 10;
-
-            // ─── Buttons ─────────────────────────────────────────────
-            this.btnSave.Text     = "Save";
-            this.btnSave.Size     = new System.Drawing.Size(90, 32);
-            this.btnSave.Location = new System.Drawing.Point(controlX, row);
-
-            this.btnCancel.Text         = "Cancel";
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Location = new System.Drawing.Point(170, 262);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(230, 23);
+            this.cboCategory.TabIndex = 13;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(170, 308);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 32);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Size         = new System.Drawing.Size(90, 32);
-            this.btnCancel.Location     = new System.Drawing.Point(controlX + 100, row);
-
-            // ─── Form ────────────────────────────────────────────────
-            this.AcceptButton    = this.btnSave;
-            this.CancelButton    = this.btnCancel;
-            this.ClientSize      = new System.Drawing.Size(440, row + 52);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox     = false;
-            this.MinimizeBox     = false;
-            this.StartPosition   = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text            = "Product";
-            this.Font            = new System.Drawing.Font("Segoe UI", 9F);
-
+            this.btnCancel.Location = new System.Drawing.Point(270, 308);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(90, 32);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // ProductForm
+            // 
+            this.AcceptButton = this.btnSave;
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(440, 360);
             this.Controls.AddRange(new System.Windows.Forms.Control[] {
                 this.lblId,          this.lblIdValue,
                 this.lblName,        this.txtName,
@@ -149,7 +194,13 @@ namespace InventoryManagementSystem.Forms
                 this.lblCategory,    this.cboCategory,
                 this.btnSave,        this.btnCancel
             });
-
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ProductForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Product";
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).EndInit();
             this.ResumeLayout(false);

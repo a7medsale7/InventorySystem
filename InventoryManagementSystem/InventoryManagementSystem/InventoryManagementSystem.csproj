@@ -47,6 +47,24 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
+    <!-- ════ Telerik RadGridView 2026.3.1007 ════ -->
+    <Reference Include="Telerik.WinControls">
+      <HintPath>packages\Telerik.UI.for.WinForms.Common.2026.3.1007\lib\net48\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView">
+      <HintPath>packages\Telerik.UI.for.WinForms.GridView.2026.3.1007\lib\net48\Telerik.WinControls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI">
+      <HintPath>packages\Telerik.UI.for.WinForms.Common.2026.3.1007\lib\net48\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon">
+      <HintPath>packages\Telerik.UI.for.WinForms.Common.2026.3.1007\lib\net48\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <!-- Telerik.Licensing loaded automatically by Telerik.WinControls at runtime -->
     <!-- ════ Crystal Reports 13.0.4003 ════ -->
     <Reference Include="CrystalDecisions.CrystalReports.Engine">
       <HintPath>packages\CrystalReports.Engine.13.0.4003\lib\net40\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
@@ -172,6 +190,9 @@
     <Compile Include="Program.cs" />
     <!-- ════ Properties ════ -->
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -192,11 +213,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Content Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <!-- Telerik.Licensing.Runtime.dll must be present in output for runtime -->
+    <Content Include="packages\Telerik.Licensing.1.9.3\lib\net462\Telerik.Licensing.Runtime.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Link>Telerik.Licensing.Runtime.dll</Link>
+    </Content>
     <None Include="packages.config" />
+    <None Include="Reports\InventoryDataSet.xsc">
+      <DependentUpon>InventoryDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Reports\InventoryDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>InventoryDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\InventoryDataSet.xss">
+      <DependentUpon>InventoryDataSet.xsd</DependentUpon>
     </None>
     <None Include="Reports\InventoryReport.rpt" Condition="Exists('Reports\InventoryReport.rpt')">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
