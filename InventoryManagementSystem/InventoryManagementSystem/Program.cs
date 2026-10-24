@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System;
 using System.Windows.Forms;
+using InventoryManagementSystem.Forms;
 
 namespace InventoryManagementSystem
 {
@@ -16,7 +14,25 @@ namespace InventoryManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            // حلقة: بعد Logout تفتح شاشة Login تاني
+            while (true)
+            {
+                using (var login = new LoginForm())
+                {
+                    if (login.ShowDialog() != DialogResult.OK)
+                        break; // المستخدم ضغط Cancel أو أغلق الشاشة
+                }
+
+                using (var main = new MainForm())
+                {
+                    Application.Run(main);
+
+                    // لو مش Logout (يعني أغلق البرنامج عادي) اخرج من الحلقة
+                    if (!main.LoggedOut)
+                        break;
+                }
+            }
         }
     }
 }
